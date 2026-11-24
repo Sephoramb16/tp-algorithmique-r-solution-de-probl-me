@@ -6,3 +6,5 @@ def main():
     if reponse == 'n':
         candidats = animaux.copy().remove(animal_aleatoire)
         
+    else:
+        return "Yes j'ai réussi a deviné du premier coup !!"    
