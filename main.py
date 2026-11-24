@@ -1,3 +1,8 @@
-import matplotlib.pyplot as plt
-plt.plot([1,2],[3,4])
-plt.show()
+from donnees import animaux
+import random
+def main():
+    animal_aleatoire = random.choice(animaux)
+    reponse = input(f"Bonjour, est-ce que vous pensez à : {animal_aleatoire['nom']} ? (y/n) : ").strip().lower()
+    if reponse == 'n':
+        candidats = animaux.copy().remove(animal_aleatoire)
+        
