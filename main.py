@@ -1,13 +1,14 @@
 from donnees import animaux
 import random
 
+
 def backtracking(state, questions):
     if state["index"] == len(questions):
         for animal in state["candidats"]:
             reponse = input(f"pensez vous à : {animal['nom']} ? ").strip().lower()
             if reponse == 'y':
+                print(state)
                 return animal
-
         return None
     
     cle, texte = questions[state["index"]]
@@ -46,9 +47,9 @@ def main():
         candidats = animaux.copy()
         candidats.remove(animal_aleatoire)
         questions = [
-            ("domestique","est-ildomestique?"),
-            ("aquatique","est-il aquatique?"),
-            ("carnivore","est-il carnivore?")
+            ("domestique","Est-il domestique ? (y/n) : "),
+            ("aquatique","Est-il aquatique ? (y/n) : "),
+            ("carnivore","Est-il carnivore ? (y/n) : ")
         ]
        
         state = {
@@ -59,9 +60,26 @@ def main():
         
                 
         resultat = backtracking(state, questions)
+        if resultat is not None:
+            print("Yes j'ai réussi a deviner !!" )
+        else:
+            nouveau_nom=input("Mince je n'ai pas réussi à deviner l'animal auquel tu pensais! Quel est le nom de ce nouvel animal ? : ")
+            nouvel_animal = {"nom": nouveau_nom }
+            questions_nv = [
+                        ("domestique","Le nouvel animal est domestique ? (y/n) : "),
+                        ("aquatique","Le nouvel animal est aquatique ? (y/n) : "),
+                        ("carnivore","Le nouvel animal est carnivore ? (y/n) : ")
+                    ]
+                   
+            for cle, texte in questions_nv:
+                reponse_nv = input(texte).strip().lower()
 
+                if reponse_nv == 'y':
+                    nouvel_animal[cle] = 1 
+                else:
+                    nouvel_animal[cle] = 0
+            animaux.append(nouvel_animal)
     else:
-        return "Yes j'ai réussi a deviné du premier coup !!"    
-
-
+        print("Yes j'ai réussi a deviné du premier coup !!")
+main()
    
