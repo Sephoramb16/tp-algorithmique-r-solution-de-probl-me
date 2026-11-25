@@ -1,0 +1,92 @@
+[
+    {
+        "nom": "Écureuil",
+        "domestique": 0,
+        "aquatique": 0,
+        "carnivore": 0
+    },
+    {
+        "nom": "Éléphant",
+        "domestique": 0,
+        "aquatique": 0,
+        "carnivore": 0
+    },
+    {
+        "nom": "Lion",
+        "domestique": 0,
+        "aquatique": 0,
+        "carnivore": 1
+    },
+    {
+        "nom": "Aigle",
+        "domestique": 0,
+        "aquatique": 0,
+        "carnivore": 1
+    },
+    {
+        "nom": "Castor",
+        "domestique": 0,
+        "aquatique": 1,
+        "carnivore": 0
+    },
+    {
+        "nom": "Lamantin",
+        "domestique": 0,
+        "aquatique": 1,
+        "carnivore": 0
+    },
+    {
+        "nom": "Lapin",
+        "domestique": 1,
+        "aquatique": 0,
+        "carnivore": 0
+    },
+    {
+        "nom": "Tortue",
+        "domestique": 1,
+        "aquatique": 0,
+        "carnivore": 0
+    },
+    {
+        "nom": "Requin",
+        "domestique": 0,
+        "aquatique": 1,
+        "carnivore": 1
+    },
+    {
+        "nom": "Crocodile",
+        "domestique": 0,
+        "aquatique": 1,
+        "carnivore": 1
+    },
+    {
+        "nom": "Chien",
+        "domestique": 1,
+        "aquatique": 0,
+        "carnivore": 1
+    },
+    {
+        "nom": "Chat",
+        "domestique": 1,
+        "aquatique": 0,
+        "carnivore": 1
+    },
+    {
+        "nom": "poisson rouge ",
+        "domestique": 1,
+        "aquatique": 1,
+        "carnivore": 0
+    },
+    {
+        "nom": "Axolotl",
+        "domestique": 1,
+        "aquatique": 1,
+        "carnivore": 1
+    },
+    {
+        "nom": "Crabe",
+        "domestique": 1,
+        "aquatique": 1,
+        "carnivore": 1
+    }
+]
