@@ -7,9 +7,9 @@ animaux = [
     {"nom": "Lion", "domestique": 0, "aquatique": 0, "carnivore": 1},
     {"nom": "Aigle", "domestique": 0, "aquatique": 0, "carnivore": 1},
 
-    #Sauvage , Aquatique , Carnivore (0, 1, 0)
-    {"nom": "Castor", "domestique": 0, "aquatique": 1, "carnivore": 1},
-    {"nom": "Lamantin", "domestique": 0, "aquatique": 1, "carnivore": 1},
+    #Sauvage , Aquatique , herbivore (0, 1, 0)
+    {"nom": "Castor", "domestique": 0, "aquatique": 1, "carnivore": 0},
+    {"nom": "Lamantin", "domestique": 0, "aquatique": 1, "carnivore": 0},
 
 
     # Domestique, Terrestre, Herbivore (1, 0, 0)

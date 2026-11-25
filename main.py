@@ -1,13 +1,27 @@
 from donnees import animaux
 import random
+import json
+import os
+
+def memoire():
+    if os.path.exists("animaux.json"):
+        with open("animaux.json", "r", encoding="utf-8") as f:
+            return json.load(f)
+    sauvegarde(animaux)
+    return animaux.copy()
+
+def sauvegarde(animaux):
+    with open("animaux.json", "w", encoding="utf-8") as f:
+        json.dump(animaux, f, indent=4, ensure_ascii=False)
+
 
 
 def backtracking(state, questions):
     if state["index"] == len(questions):
+        print("\n" + "-" * 40)
         for animal in state["candidats"]:
-            reponse = input(f"pensez vous à : {animal['nom']} ? ").strip().lower()
+            reponse = input(f"🕵 Pensez vous à : {animal['nom']} ? ").strip().lower()
             if reponse == 'y':
-                print(state)
                 return animal
         return None
     
@@ -41,8 +55,16 @@ def backtracking(state, questions):
 
 
 def main():
+    animaux = memoire()
     animal_aleatoire = random.choice(animaux)
-    reponse = input(f"Bonjour, est-ce que vous pensez à : {animal_aleatoire['nom']} ? (y/n) : ").strip().lower()
+    
+    print("\n" + "=" * 45)
+    print("🐾  DEVINE L'ANIMAL — AGENT IA (BACKTRACKING)")
+    print("=" * 45)
+    print("Pensez à un animal, je vais essayer de le deviner.\n")
+
+    reponse = input(f"🕵 Bonjour, est-ce que vous pensez à : {animal_aleatoire['nom']} ? (y/n) : ").strip().lower()
+    
     if reponse == 'n':
         candidats = animaux.copy()
         candidats.remove(animal_aleatoire)
@@ -61,9 +83,11 @@ def main():
                 
         resultat = backtracking(state, questions)
         if resultat is not None:
-            print("Yes j'ai réussi a deviner !!" )
+            print(f"🎉 J'AI TROUVÉ ! Vous pensiez à : {resultat['nom'].upper()}")
         else:
-            nouveau_nom=input("Mince je n'ai pas réussi à deviner l'animal auquel tu pensais! Quel est le nom de ce nouvel animal ? : ")
+            
+
+            nouveau_nom = input("🤔 Je n'ai pas trouvé votre animal dans ma base. Quel est le nom de ce nouvel animal ? : ").strip().capitalize()
             nouvel_animal = {"nom": nouveau_nom }
             questions_nv = [
                         ("domestique","Le nouvel animal est domestique ? (y/n) : "),
@@ -79,7 +103,8 @@ def main():
                 else:
                     nouvel_animal[cle] = 0
             animaux.append(nouvel_animal)
+            sauvegarde(animaux)
     else:
-        print("Yes j'ai réussi a deviné du premier coup !!")
+        print("🎉 Yes j'ai réussi a deviné du premier coup !!")
 main()
    
