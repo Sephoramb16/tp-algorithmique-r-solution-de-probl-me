@@ -88,5 +88,17 @@
         "domestique": 1,
         "aquatique": 1,
         "carnivore": 1
+    },
+    {
+        "nom": "Dauphin",
+        "domestique": 0,
+        "aquatique": 1,
+        "carnivore": 1
+    },
+    {
+        "nom": "Zebre",
+        "domestique": 0,
+        "aquatique": 0,
+        "carnivore": 0
     }
 ]

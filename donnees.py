@@ -26,7 +26,7 @@ animaux = [
 
     
     # Domestique, Aquatique, Herbivore (1, 1, 0)
-    {"nom": "poisson rouge ", "domestique": 1, "aquatique": 1, "carnivore": 0},
+    {"nom": "Poisson rouge ", "domestique": 1, "aquatique": 1, "carnivore": 0},
     
     # Domestique, Aquatique , Carnivore (1, 1, 1)
     {"nom": "Axolotl", "domestique": 1, "aquatique": 1, "carnivore": 1},
